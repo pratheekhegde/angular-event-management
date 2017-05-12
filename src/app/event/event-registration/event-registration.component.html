@@ -1,3 +1,60 @@
-<p>
-  event-registration works!
-</p>
+<div *ngIf="!(eventDetails | async)" style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);">
+  <span class="spinner spinner-inline">
+    Loading Event...
+  </span>
+  <span>
+    Loading Event...
+  </span>
+</div>
+<div class="row" *ngIf="(eventDetails | async)">
+  <div class="col-sm-12 col-md-6">
+    <div class="row">
+      <div class="col-md-12">
+        <button routerLink="/events" class="btn btn-sm"><clr-icon shape="arrow left"></clr-icon> Back</button>
+      </div>
+    </div>
+    <form>
+      <section class="form-block">
+        <label>Registration Form</label>
+        <div class="form-group">
+          <label for="aForm_1">Full Name</label>
+          <input type="text" id="aForm_1" placeholder="Enter value here" size="45">
+        </div>
+        <div class="form-group">
+          <label for="aForm_2">Email Address</label>
+          <input type="password" id="aForm_2" placeholder="Enter another value here" size="35">
+        </div>
+        <div class="form-group">
+          <label for="aForm_3">Number of Tickets</label>
+          <div class="select">
+            <select id="aForm_3">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Buy</button>
+      </section>
+    </form>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <div class="card">
+      <div class="card-img">
+        <img [src]="(eventDetails | async)?.cardImage" />
+      </div>
+      <div class="card-block">
+        <div class="card-title">
+          {{(eventDetails | async)?.name}}
+        </div>
+        <p class="card-text">
+          <clr-icon shape="date" class="is-info"></clr-icon> {{(eventDetails | async)?.date | date}}<br>
+          <clr-icon shape="map" class="is-info"></clr-icon> {{(eventDetails | async)?.location}}
+        </p>
+        <p class="card-text">
+          {{ (eventDetails | async)?.description }}
+        </p>
+      </div>
+    </div>
+  </div>

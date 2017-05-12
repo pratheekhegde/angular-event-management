@@ -6,7 +6,7 @@ import { EventRegistrationComponent } from './event-registration/event-registrat
 
 const routes: Routes = [
   { path: '', component: EventListComponent },
-  { path: 'register/:id', component: EventRegistrationComponent }
+  { path: ':id/register', component: EventRegistrationComponent }
 ];
 
 @NgModule({

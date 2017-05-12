@@ -1,6 +1,14 @@
+<div *ngIf="!(events | async)" style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);">
+  <span class="spinner spinner-inline">
+    Loading Events...
+  </span>
+  <span>
+    Loading Events...
+  </span>
+</div>
 <div class="row">
-  <div *ngFor="let e of events" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-    <a href="..." class="card clickable">
+  <div *ngFor="let e of events | async" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+    <a [routerLink]="[e.$key,'register']" class="card clickable">
       <div class="card-img">
         <img [src]="e.cardImage" />
       </div>
@@ -13,7 +21,7 @@
           <clr-icon shape="map" class="is-info"></clr-icon> {{e.location}}
         </p>
         <p class="card-text">
-         {{ e.description | truncate : 235 }}
+          {{ e.description | truncate : 235 }}
         </p>
       </div>
     </a>

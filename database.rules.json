@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "events": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}

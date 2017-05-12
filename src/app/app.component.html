@@ -8,16 +8,15 @@
     </div>
     <div class="header-nav">
       <a [routerLink]="['/events']" routerLinkActive="active" class="nav-link"><span class="nav-text">Events</span></a>
-      <a href="..." class="nav-link"><span class="nav-text">Interactive Analytics</span></a>
     </div>
   </clr-header>
   <nav *ngIf="false" class="sub-nav" [clr-nav-level]="1">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="#" [routerLink]="['/home']" routerLinkActive="active">Home</a>
+        <a class="nav-link" href="#" [routerLink]="['/admin/event-summary']" routerLinkActive="active">Events</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" [routerLink]="['/about']" routerLinkActive="active">About</a>
+        <a class="nav-link" href="#" [routerLink]="['/admin/delegate-summary']" routerLinkActive="active">Delegates</a>
       </li>
     </ul>
   </nav>
