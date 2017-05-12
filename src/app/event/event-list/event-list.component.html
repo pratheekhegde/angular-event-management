@@ -1,0 +1,21 @@
+<div class="row">
+  <div *ngFor="let e of events" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+    <a href="..." class="card clickable">
+      <div class="card-img">
+        <img [src]="e.cardImage" />
+      </div>
+      <div class="card-block">
+        <div class="card-title">
+          {{e.name}}
+        </div>
+        <p class="card-text">
+          <clr-icon shape="date" class="is-info"></clr-icon> {{e.date | date}}<br>
+          <clr-icon shape="map" class="is-info"></clr-icon> {{e.location}}
+        </p>
+        <p class="card-text">
+         {{ e.description | truncate : 235 }}
+        </p>
+      </div>
+    </a>
+  </div>
+</div>
