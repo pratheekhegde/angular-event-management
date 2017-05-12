@@ -15,10 +15,12 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { AboutComponent } from "app/about/about.component";
 
 @NgModule({
     declarations: [
         AppComponent,
+        AboutComponent // component without module
     ],
     imports: [
         BrowserAnimationsModule,
