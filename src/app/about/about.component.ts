@@ -1,15 +1,19 @@
-/*
- * Copyright (c) 2016 VMware, Inc. All Rights Reserved.
- * This software is released under MIT license.
- * The full license information can be found in LICENSE in the root directory of this project.
- */
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     styleUrls: ['./about.component.scss'],
     templateUrl: './about.component.html'
 })
-export class AboutComponent {
+export class AboutComponent implements OnInit {
     open: Boolean = false;
+    constructor(
+        private titleService: Title,
+        private route: ActivatedRoute,
+    ) { }
 
+    ngOnInit() {
+        this.titleService.setTitle(this.route.snapshot.data.title);
+    }
 }

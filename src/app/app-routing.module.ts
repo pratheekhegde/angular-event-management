@@ -1,3 +1,4 @@
+import { AboutComponent } from './about/about.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -24,6 +25,9 @@ export const routes: Routes = [
      data: {
       title: "Admin"
     }
+  },
+  {
+    path: 'about', component: AboutComponent, data: { title: "About Page"}
   }
 ];
 
