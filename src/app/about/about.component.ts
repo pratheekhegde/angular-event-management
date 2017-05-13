@@ -3,7 +3,6 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    styleUrls: ['./about.component.scss'],
     templateUrl: './about.component.html'
 })
 export class AboutComponent implements OnInit {

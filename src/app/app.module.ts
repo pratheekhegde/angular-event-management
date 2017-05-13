@@ -16,11 +16,13 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { AboutComponent } from "app/about/about.component";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        AboutComponent // component without module
+        AboutComponent, // component without module
+        PageNotFoundComponent // component without module
     ],
     imports: [
         BrowserAnimationsModule,
